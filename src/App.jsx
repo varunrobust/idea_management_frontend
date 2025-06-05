@@ -12,7 +12,7 @@ import PrivateRoute from "./components/ProtectedLayout/PrivateRoute";
 import IdeaDetails from "./components/Ideas/IdeaDetails";
 import Error from "./components/ErrorHandlers/Error";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
-import FeedbackForm from "./components/Feedback/FeedbackFOrm";
+import FeedbackForm from "./components/Feedback/FeedbackForm";
 
 function App() {
     const [showSplash, setShowSplash] = useState(() => {
