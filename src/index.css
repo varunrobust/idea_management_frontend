@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  [data-theme="light"] {
+    --color-bg: 250 250 249;
+    --color-bg-alt: 244 244 245;
+    --color-header-bg: 255 255 255;
+    --color-header-border: 203 213 225;
+    --color-header-shadow: 59 130 246;
+    --color-header-text: 30 41 59;
+    --color-header-icon: 59 130 246;
+    --color-header-hover: 239 246 255;
+    --color-header-active: 37 99 235;
+    --color-header-dropdown-bg: 255 255 255;
+    --color-header-dropdown-border: 191 219 254;
+  }
+  [data-theme="dark"] {
+    --color-bg: 24 24 27;
+    --color-bg-alt: 35 39 47;
+    --color-header-bg: 15 23 42;
+    --color-header-border: 6 182 212;
+    --color-header-shadow: 6 182 212;
+    --color-header-text: 224 231 239;
+    --color-header-icon: 103 232 249;
+    --color-header-hover: 22 78 99;
+    --color-header-active: 34 211 238;
+    --color-header-dropdown-bg: 15 23 42;
+    --color-header-dropdown-border: 34 211 238;
+  }
+}
+
+html {
+  transition: background 0.3s, color 0.3s;
+}
+body {
+  transition: background 0.3s, color 0.3s;
+}
+
+.bg-theme {
+  background-color: rgb(var(--color-bg));
+}
+.bg-header {
+  background-color: rgb(var(--color-header-bg));
+}
+.text-header {
+  color: rgb(var(--color-header-text));
+}
+.border-header {
+  border-color: rgb(var(--color-header-border));
+}
+.shadow-header {
+  box-shadow: 0 2px 8px 0 rgb(var(--color-header-shadow) / 0.06);
+}
