@@ -27,8 +27,21 @@ export default function Register() {
             setError("Passwords do not match.");
             return;
         }
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        if (passwordRegex.test(form.password)) {
+            setError(
+                "Password must be at least 8 characters long, contain at least one uppercase letter, one lowercase letter, and one number."
+            );
+            return;
+        }
 
         setLoading(true);
+        setTimeout(() => {
+            setError(
+                "Registering you... If this takes a while, our backend service may be waking up. Please wait or try again in a minute."
+            );
+        }, 5000);
+
         try {
             const data = await apiFetch("/register", {
                 method: "POST",

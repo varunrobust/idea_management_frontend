@@ -13,6 +13,8 @@ import IdeaDetails from "./components/Ideas/IdeaDetails";
 import Error from "./components/ErrorHandlers/Error";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
 import FeedbackForm from "./components/Feedback/FeedbackForm";
+import { Analytics } from "@vercel/analytics/react";
+import { apiFetch } from "./utils/api";
 
 function App() {
     const [showSplash, setShowSplash] = useState(() => {
@@ -24,10 +26,19 @@ function App() {
             const splashTimeout = setTimeout(() => {
                 setShowSplash(false);
                 sessionStorage.setItem("splashShown", "true");
-            }, 2000);
+            }, 5000);
             return () => clearTimeout(splashTimeout);
         }
     }, [showSplash]);
+
+    useEffect(() => {
+        const triggerStartUp = async () => {
+            await apiFetch("/ping");
+        };
+        triggerStartUp().catch((err) => {
+            console.error("Error during startup:", err);
+        });
+    }, []);
 
     return (
         <>
@@ -85,6 +96,7 @@ function App() {
                     </BrowserRouter>
                 </div>
             )}
+            <Analytics />
         </>
     );
 }

@@ -12,6 +12,12 @@ export default function Login() {
         e.preventDefault();
         setError("");
 
+        setTimeout(() => {
+            setError(
+                "Logging you in... If this takes a while, our backend service may be waking up. Please wait or try again in a minute."
+            );
+        }, 5000);
+
         try {
             const data = await apiFetch("/login", {
                 method: "POST",
@@ -25,7 +31,6 @@ export default function Login() {
             localStorage.setItem("token", data.token);
             console.log("Login successful, token stored:", data.token);
             navigate("/dashboard");
-            window.location.reload();
         } catch (err) {
             setError(err.message);
         }

@@ -167,7 +167,6 @@ function Header() {
                         onClick={() => {
                             localStorage.clear();
                             navigate("/login");
-                            window.location.reload();
                         }}
                     >
                         <FaSignOutAlt className="inline-block text-lg" />
