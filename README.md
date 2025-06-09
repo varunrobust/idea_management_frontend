@@ -2,6 +2,8 @@
 
 This project is a **frontend** application for an *Idea Management System*. It allows users to **submit**, **view**, and **discuss** ideas, providing features like authentication, role-based access (for editing/deleting own ideas), **theming** (light/dark mode), and basic analytics on the dashboard. It communicates with a backend API to manage data.
 
+For backend implementation, you can refer here: [Idea Management Backend](https://github.com/varunrobust/idea_management_backend)
+
 ---
 
 ## Visual Overview
