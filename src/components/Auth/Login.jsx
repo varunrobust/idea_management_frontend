@@ -10,13 +10,9 @@ export default function Login() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError("");
-
-        setTimeout(() => {
-            setError(
-                "Logging you in... If this takes a while, our backend service may be waking up. Please wait or try again in a minute."
-            );
-        }, 5000);
+        setError(
+            "Logging you in... If this takes a while, backend service may be waking up. Please wait or try again in a minute."
+        );
 
         try {
             const data = await apiFetch("/login", {
