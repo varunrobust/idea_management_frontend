@@ -147,7 +147,7 @@ export default function AddIdeaForm() {
                     </button>
                     <button
                         type="button"
-                        onClick={() => navigate("/")}
+                        onClick={() => navigate("/dashboard")}
                         disabled={loading}
                         className="flex-1 bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition-colors duration-150 font-semibold shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
                     >
